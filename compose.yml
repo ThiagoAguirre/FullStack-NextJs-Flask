@@ -1,0 +1,16 @@
+services:
+  db:
+    container_name: db
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "15432:5432"  # Alterando a porta externa para 15432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped  # Garante que o container reinicie se necessário
+
+volumes:
+  pgdata: {}
