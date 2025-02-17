@@ -5,7 +5,7 @@ from os import environ
 
 app = Flask(__name__)
 CORS(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('dbURL')
+app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 
 class User(db.Model):
